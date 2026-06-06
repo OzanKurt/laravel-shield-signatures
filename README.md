@@ -1,5 +1,19 @@
 # Laravel Shield Signatures
 
+> [!WARNING]
+> **DEPRECATED.** Signature distribution has moved into the Laravel Shield Central app
+> (`laravel-shield-app`). The plugin's `shield:signatures-sync` now pulls from the
+> Central API, which gates the free/premium channels server-side by license:
+>
+> - **Free** (public, lagged ~30 days): `GET https://laravel-shield.ozankurt.com/api/signatures/free`
+> - **Premium** (license bearer, fresh): `GET https://laravel-shield.ozankurt.com/api/signatures/premium`
+>
+> The `signatures.json` bundle here was migrated into the app's `feed_signatures`
+> table (`database/data/signatures.json` + `SignatureSeeder`). New signatures are
+> curated there. This repo is kept for history and can be archived.
+
+---
+
 Versioned malware/webshell signature feed for [Laravel Shield](https://github.com/OzanKurt/laravel-shield).
 
 The Shield plugin's `shield:signatures-sync` Artisan command pulls the **latest tagged release** of this repo and upserts its `signatures.json` into the application's `ls_signatures` table.
